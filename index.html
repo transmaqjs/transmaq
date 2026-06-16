@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRANS&MAQ JS</title>
+
+<link rel="icon" href="img/logo.png">
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+font-family:"Segoe UI",Arial,sans-serif;
+background:#f4f6f8;
+color:#222;
+overflow-x:hidden;
+}
+
+
+
+header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:100px;
+background:#000;
+z-index:2000;
+box-shadow:0 5px 25px rgba(0,0,0,.6);
+}
+
+
+
+.header-inner{
+max-width:1200px;
+margin:auto;
+padding:10px 20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+
+
+.brand img{
+height:70px;
+}
+
+
+
+nav{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:700;
+}
+
+
+
+nav a:hover{
+color:#d4af37;
+}
+
+
+
+main{
+margin-top:100px;
+}
+
+
+
+section{
+
+scroll-margin-top:120px;
+
+min-height:calc(100vh - 100px);
+
+display:flex;
+
+flex-direction:column;
+
+overflow:hidden;
+
+}
+
+
+
+
+.hero{
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('portada.jpg');
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+position:relative;
+
+}
+
+
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:url('img/logo.png') center/contain no-repeat;
+
+opacity:.12;
+
+}
+
+
+
+.section-content{
+
+width:100%;
+
+max-width:1200px;
+
+margin:auto;
+
+padding:60px 20px;
+
+flex:1;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+}
+
+
+
+h2{
+
+text-align:center;
+
+font-size:34px;
+
+color:#d4af37;
+
+margin-bottom:45px;
+
+text-transform:uppercase;
+
+letter-spacing:2px;
+
+}
+
+
+
+.dark-card{
+
+background:#111;
+
+color:white;
+
+padding:30px;
+
+border-radius:15px;
+
+line-height:1.8;
+
+text-align:justify;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+
+
+.services-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+}
+
+
+
+.svc-dark{
+
+background:#0f0f0f;
+
+color:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+}
+
+
+
+.svc-dark .imgs{
+
+display:flex;
+
+}
+
+
+
+.svc-dark .imgs img{
+
+width:50%;
+
+height:150px;
+
+object-fit:cover;
+
+}
+
+
+
+.svc-body{
+
+padding:15px;
+
+text-align:justify;
+
+}
+
+
+
+.svc-body h4{
+
+color:#d4af37;
+
+text-align:center;
+
+}
+
+
+
+form{
+
+max-width:650px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+
+
+input,textarea{
+
+padding:16px;
+
+border:1px solid #ccc;
+
+border-radius:10px;
+
+font-size:16px;
+
+}
+
+
+
+button{
+
+background:#000;
+
+color:white;
+
+padding:12px;
+
+border:0;
+
+border-radius:8px;
+
+cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+background:#d4af37;
+
+color:#000;
+
+}
+
+
+
+#quienes{
+background:#fff;
+}
+
+
+#mision{
+background:#eef1f4;
+}
+
+
+#vision{
+background:#fff;
+}
+
+
+#servicios{
+background:#eef1f4;
+}
+
+
+#contacto{
+background:#fff;
+}
+
+
+
+.section-footer{
+
+background:#000;
+
+color:white;
+
+text-align:center;
+
+padding:25px;
+
+margin-top:auto;
+
+}
+
+
+
+.section-footer .line1{
+
+font-weight:700;
+
+}
+
+
+
+.section-footer .line2{
+
+margin-top:6px;
+
+font-size:14px;
+
+}
+
+
+
+
+.whatsapp-btn{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+background:#25D366;
+
+color:white;
+
+padding:10px 14px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+z-index:3000;
+
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+
+<header>
+
+<div class="header-inner">
+
+<div class="brand">
+<img src="img/logo.png">
+</div>
+
+
+<nav>
+
+<a href="#inicio">Inicio</a>
+<a href="#quienes">Quiénes Somos</a>
+<a href="#mision">Misión</a>
+<a href="#vision">Visión</a>
+<a href="#servicios">Servicios</a>
+<a href="galeria.html">Galería</a>
+<a href="#contacto">Contáctanos</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+
+<section id="inicio" class="hero">
+
+</section>
+
+
+
+
+
+<section id="quienes">
+
+
+<div class="section-content">
+
+
+<h2>Quiénes Somos</h2>
+
+
+<div class="dark-card">
+
+
+TRANS&MAQ JS nació hace aproximadamente dos años con una visión clara: convertirse en un motor de desarrollo para la región.
+
+En nuestros inicios, concentramos los esfuerzos en la operación de equipos de transporte, consolidándonos rápidamente como un aliado estratégico fundamental para los proyectos de infraestructura regional que requerían logística confiable, puntualidad y un conocimiento profundo del territorio.
+
+Con el firme propósito de ofrecer soluciones más integrales a nuestros clientes, identificamos las necesidades crecientes del entorno y expandimos nuestro portafolio hacia el suministro y venta de materiales pétreos.
+
+Actualmente combinamos transporte, suministro de materiales, maquinaria pesada y servicios especializados de ingeniería.
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section id="mision">
+
+
+<div class="section-content">
+
+
+<h2>Misión</h2>
+
+
+<div class="dark-card">
+
+
+TRANS&MAQ JS es una empresa integral dedicada al suministro y venta de material pétreo de alta calidad, transporte y logística de carga, alquiler de maquinaria pesada y servicios especializados de ingeniería civil.
+
+Nuestro compromiso es impulsar el desarrollo de proyectos de infraestructura mediante procesos eficientes, seguridad, responsabilidad ambiental y cumplimiento.
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section id="vision">
+
+
+<div class="section-content">
+
+
+<h2>Visión</h2>
+
+
+<div class="dark-card">
+
+
+Para el año 2031, TRANS&MAQ JS será reconocida como una empresa líder y confiable en la cadena de valor de la construcción, minería e ingeniería.
+
+Buscamos fortalecer nuestra capacidad operativa y continuar siendo aliados estratégicos en los proyectos de desarrollo regional.
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="servicios">
+
+
+<div class="section-content">
+
+
+<h2>Servicios</h2>
+
+
+<div class="services-grid">
+
+
+
+<div class="svc-dark">
+
+<div class="imgs">
+
+<img src="img/T2.jpeg">
+<img src="img/T6.jpeg">
+
+</div>
+
+
+<div class="svc-body">
+
+<h4>Materiales Pétreos</h4>
+
+<p>
+Suministro y venta de materiales pétreos para construcción, infraestructura y sector agrícola.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="svc-dark">
+
+<div class="imgs">
+
+<img src="img/T3.jpeg">
+<img src="img/T4.jpeg">
+
+</div>
+
+
+<div class="svc-body">
+
+<h4>Transporte</h4>
+
+<p>
+Servicio de transporte y logística de carga con seguridad y cumplimiento.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="svc-dark">
+
+<div class="imgs">
+
+<img src="img/T5.jpeg">
+<img src="img/T7.jpeg">
+
+</div>
+
+
+<div class="svc-body">
+
+<h4>Maquinaria Pesada</h4>
+
+<p>
+Alquiler de maquinaria pesada especializada.
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="svc-dark">
+
+<div class="svc-body">
+
+<h4>Ingeniería Civil</h4>
+
+<p>
+Diseño, construcción y supervisión de proyectos de infraestructura.
+</p>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="contacto">
+
+
+<div class="section-content">
+
+
+<h2>Contáctanos</h2>
+
+
+
+<form id="contactoForm">
+
+
+
+<input
+type="text"
+name="nombre"
+placeholder="Nombre"
+required>
+
+
+<input
+type="text"
+name="telefono"
+placeholder="Teléfono"
+required>
+
+
+
+<input
+type="email"
+name="correo"
+placeholder="Correo"
+required>
+
+
+
+<textarea
+
+name="mensaje"
+
+rows="6"
+
+placeholder="Mensaje"
+
+required>
+
+</textarea>
+
+
+
+<button type="submit">
+
+Enviar Mensaje
+
+</button>
+
+
+
+</form>
+
+
+<p id="respuesta"></p>
+
+
+
+</div>
+
+
+
+
+
+<footer class="section-footer">
+
+
+<div class="line1">
+
+© 2026 Martha Lucia Chacon - Ingeniera de Sistemas | Todos los derechos reservados
+
+</div>
+
+
+<div class="line2">
+
+Calle 11 11 - 34 Barrio Centro Vista Hermosa, Meta | Celular 3106733175
+
+</div>
+
+
+</footer>
+
+
+
+</section>
+
+
+
+
+</main>
+
+
+
+
+
+<a 
+class="whatsapp-btn"
+href="https://wa.me/573222800306"
+target="_blank">
+
+WhatsApp
+
+</a>
+
+
+
+
+
+
+<script>
+
+
+const formulario = document.getElementById("contactoForm");
+
+
+
+formulario.addEventListener("submit",function(e){
+
+
+e.preventDefault();
+
+
+
+fetch(
+"https://script.google.com/macros/s/AKfycbwWEOxZ-dDC0Wxim30LamdREqMpu5yGwDgB75ZO8pDvO5q57qmeZUBU9_4PROCcX5Rl/exec",
+{
+
+method:"POST",
+
+body:new FormData(formulario)
+
+})
+
+
+
+.then(res=>res.text())
+
+
+.then(()=>{
+
+
+document.getElementById("respuesta").innerHTML =
+"Solicitud guardada correctamente ✅";
+
+
+formulario.reset();
+
+
+})
+
+
+.catch(()=>{
+
+
+document.getElementById("respuesta").innerHTML =
+"Error al guardar ❌";
+
+
+});
+
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>
