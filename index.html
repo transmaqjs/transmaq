@@ -9,7 +9,7 @@
 
 <title>TRANS&MAQ JS</title>
 
-<link rel="icon" href="img/logo.png">
+<link rel="icon" href="/transmaq/img/logo.png">
 
 
 <style>
@@ -116,7 +116,7 @@ height:100vh;
 
 background:
 linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url('portada.jpg');
+url('/transmaq/img/portada.jpg');
 
 background-size:cover;
 
@@ -130,6 +130,22 @@ justify-content:center;
 
 position:relative;
 
+animation: heroFade 3s ease-in-out forwards;
+
+}
+
+@keyframes heroFade {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 
@@ -144,10 +160,23 @@ width:500px;
 
 height:500px;
 
-background:url('img/logo.png') center/contain no-repeat;
+background:url('/transmaq/img/logo.png') center/contain no-repeat;
 
 opacity:.12;
 
+animation: logoPulse 4s ease-in-out infinite;
+
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    opacity: 0.12;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.20;
+    transform: scale(1.02);
+  }
 }
 
 
@@ -434,7 +463,7 @@ z-index:3000;
 <div class="header-inner">
 
 <div class="brand">
-<img src="img/logo.png">
+<img src="/transmaq/img/logo.png">
 </div>
 
 
@@ -467,7 +496,6 @@ z-index:3000;
 
 
 
-
 <section id="quienes">
 
 
@@ -482,9 +510,9 @@ z-index:3000;
 
 TRANS&MAQ JS nació hace aproximadamente dos años con una visión clara: convertirse en un motor de desarrollo para la región.
 
-En nuestros inicios, concentramos los esfuerzos en la operación de equipos de transporte, consolidándonos rápidamente como un aliado estratégico fundamental para los proyectos de infraestructura regional que requerían logística confiable, puntualidad y un conocimiento profundo del territorio.
+En nuestros inicios, concentramos los esfuerzos en la operación de equipos de transporte, consolidándonos rápidamente como un aliado estratégico fundamental para los proyectos de infraestructura y construcción.
 
-Con el firme propósito de ofrecer soluciones más integrales a nuestros clientes, identificamos las necesidades crecientes del entorno y expandimos nuestro portafolio hacia el suministro y venta de materiales pétreos.
+Con el firme propósito de ofrecer soluciones más integrales a nuestros clientes, identificamos las necesidades crecientes del entorno y expandimos nuestro portafolio hacia el suministro y venta de materiales pétreos, alquiler de maquinaria pesada y servicios de ingeniería especializada.
 
 Actualmente combinamos transporte, suministro de materiales, maquinaria pesada y servicios especializados de ingeniería.
 
@@ -495,8 +523,6 @@ Actualmente combinamos transporte, suministro de materiales, maquinaria pesada y
 
 
 </section>
-
-
 
 
 
@@ -513,10 +539,9 @@ Actualmente combinamos transporte, suministro de materiales, maquinaria pesada y
 <div class="dark-card">
 
 
-TRANS&MAQ JS es una empresa integral dedicada al suministro y venta de material pétreo de alta calidad, transporte y logística de carga, alquiler de maquinaria pesada y servicios especializados de ingeniería civil.
+TRANS&MAQ JS es una empresa integral dedicada al suministro y venta de material pétreo de alta calidad, transporte y logística de carga, alquiler de maquinaria pesada y servicios especializados de ingeniería.
 
 Nuestro compromiso es impulsar el desarrollo de proyectos de infraestructura mediante procesos eficientes, seguridad, responsabilidad ambiental y cumplimiento.
-
 
 </div>
 
@@ -525,8 +550,6 @@ Nuestro compromiso es impulsar el desarrollo de proyectos de infraestructura med
 
 
 </section>
-
-
 
 
 
@@ -547,7 +570,6 @@ Para el año 2031, TRANS&MAQ JS será reconocida como una empresa líder y confi
 
 Buscamos fortalecer nuestra capacidad operativa y continuar siendo aliados estratégicos en los proyectos de desarrollo regional.
 
-
 </div>
 
 
@@ -555,9 +577,6 @@ Buscamos fortalecer nuestra capacidad operativa y continuar siendo aliados estra
 
 
 </section>
-
-
-
 
 
 
@@ -579,8 +598,8 @@ Buscamos fortalecer nuestra capacidad operativa y continuar siendo aliados estra
 
 <div class="imgs">
 
-<img src="img/T2.jpeg">
-<img src="img/T6.jpeg">
+<img src="/transmaq/img/T2.jpeg">
+<img src="/transmaq/img/T6.jpeg">
 
 </div>
 
@@ -600,13 +619,12 @@ Suministro y venta de materiales pétreos para construcción, infraestructura y 
 
 
 
-
 <div class="svc-dark">
 
 <div class="imgs">
 
-<img src="img/T3.jpeg">
-<img src="img/T4.jpeg">
+<img src="/transmaq/img/T3.jpeg">
+<img src="/transmaq/img/T4.jpeg">
 
 </div>
 
@@ -626,14 +644,12 @@ Servicio de transporte y logística de carga con seguridad y cumplimiento.
 
 
 
-
-
 <div class="svc-dark">
 
 <div class="imgs">
 
-<img src="img/T5.jpeg">
-<img src="img/T7.jpeg">
+<img src="/transmaq/img/T5.jpeg">
+<img src="/transmaq/img/T7.jpeg">
 
 </div>
 
@@ -649,8 +665,6 @@ Alquiler de maquinaria pesada especializada.
 </div>
 
 </div>
-
-
 
 
 
@@ -678,9 +692,6 @@ Diseño, construcción y supervisión de proyectos de infraestructura.
 
 
 </section>
-
-
-
 
 
 
@@ -756,7 +767,6 @@ Enviar Mensaje
 
 
 
-
 <footer class="section-footer">
 
 
@@ -788,7 +798,6 @@ Calle 11 11 - 34 Barrio Centro Vista Hermosa, Meta | Celular 3106733175
 
 
 
-
 <a 
 class="whatsapp-btn"
 href="https://wa.me/573222800306"
@@ -797,8 +806,6 @@ target="_blank">
 WhatsApp
 
 </a>
-
-
 
 
 
